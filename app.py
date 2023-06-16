@@ -12,9 +12,8 @@ collection = db.tt
 
 @app.route('/')
 def index():
-    data = collection.find_one({'_id':1})
-    data['hostname'] = socket.gethostname()
-    return render_template('index.html', data=data)
+    data = collection.find({'_id':1})
+    return render_template('index.html', hostname=socket.gethostname(), data=data)
 
 if __name__ == "__main__":
-    app.run(port=app.config['PORT'], debug=app.config['DEBUG'])
+    app.run(host='0.0.0.0', port=app.config['PORT'], debug=app.config['DEBUG'])
