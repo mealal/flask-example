@@ -15,7 +15,10 @@
     <h1>TestApp</h1>
     <hr>
     <div class="content">
-        <p>Data received from hostname <i>{{ hostname }}<br/>Data from MongoDB:</i></p>
+        <p>Service is deployed on the hostname <i>{{ hostname }}</i></p>
+        <p>Connected to <b>{{ nodetype }}</b> node</p>
+        <p>Latency details: <b>{{ latency_info }}</b></p>
+        <br/>Data from MongoDB:</i>
         {% for todo in data %}
         <div class="todo">
             <p>_id:<i>{{ todo['_id'] }}</i> ,text:<i>{{ todo['text']}}</i></p>
